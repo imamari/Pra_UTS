@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Header 2 Kolom */
+.header {
+    background-color: #0b1a30;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.header-logo img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 4px;
+    margin-right: 25px;
+}
+
+.header-title h1 {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.header-title p {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+/* Navigasi Satu Baris */
+.navbar {
+    background-color: #2563eb;
+    display: flex;
+    padding: 0 40px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: #1d4ed8;
+}
+
+/* Layout 2 Kolom (Kiri & Kanan) */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 20px;
+    gap: 25px;
+}
+
+/* Kolom Kiri - Galeri 3 Kolom */
+.main-content {
+    flex: 3;
+}
+
+.main-content h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    opacity: 0.82;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card img:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.card p {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Kolom Kanan - Sidebar 3 Bagian Vertikal */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-box {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.sidebar-box h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #2563eb;
+    color: #1e293b;
+}
+
+.sidebar-box p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.sidebar-box ul {
+    list-style: none;
+}
+
+.sidebar-box ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar-box ul li a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.sidebar-box ul li a:hover {
+    text-decoration: underline;
+    color: #1d4ed8;
+}
+
+/* Footer 2 Bagian (Atas 3 Kolom & Bawah) */
+.footer {
+    background-color: #0b1a30;
+    color: white;
+    margin-top: 40px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    gap: 30px;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 6px;
+}
+
+.footer-col ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    background-color: #050d18;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: #64748b;
+    border-top: 1px solid #1e293b;
+}
+
+/* Modal Pop-Up CSS Murni (Target CSS) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background-color: white;
+    width: 400px;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #64748b;
+    font-weight: bold;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #475569;
+    border: 2px dashed #2563eb;
+}
+
+.modal-box h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.profile-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.profile-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+/* Styling Halaman Blog (Page-3) */
+.blog-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.blog-container h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.blog-container hr {
+    border: 0;
+    height: 1px;
+    background-color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+.blog-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.blog-card p {
+    font-size: 14px;
+    color: #475569;
+}
+
+.back-link {
+    display: inline-block;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
